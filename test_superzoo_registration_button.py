@@ -33,8 +33,8 @@ def test_button_registration(page):
     registration_button = page.locator(xpath_registration_button)
     registration_button.click()
 
-    # Overenie úspešného prechodu na registračnú stránku – napríklad nadpis
-    registration_heading = page.locator("text=Registrace")
+    # Overenie úspešného prechodu na registračnú stránku 
+    registration_heading = page.locator("#snippet--pdModalTitle")
     expect(registration_heading).to_be_visible()
 
     
