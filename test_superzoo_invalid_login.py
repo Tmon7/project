@@ -31,7 +31,7 @@ def test_invalid_login_without_password(page):
 
     page.goto("https://www.superzoo.cz/uzivatel-prihlaseni/")
 
-    #odmietnutie cookies
+    # Odmietnutie cookies
     cookie_refuse_button=page.locator(xpath_cookie_refuse)
     cookie_refuse_button.click()
 
