@@ -21,7 +21,7 @@ def page(browser):
 @pytest.mark.parametrize("search_term", [
     "pamlsky",
     "granule",
-    "hračky"
+    "krmivo"
 ])
 
 def test_search(page,search_term):
@@ -30,14 +30,16 @@ def test_search(page,search_term):
 
     page.goto("https://superzoo.cz/")
 
-
+    # Odmietnutie cookies
     cookie_refuse_button=page.locator(xpath_cookie_refuse)
     cookie_refuse_button.click()
 
+    # Prevedieme vyhľadanie produktu
     search_box=page.locator(id_search_box)
     search_box.fill(search_term)
     search_box.press("Enter")
 
+    # Počkáme a overíme, či stránka zobrazuje vyhľadávaný produkt
     page.wait_for_timeout(4000)
     assert search_term in page.url
     expect(page.locator("body")).to_contain_text(search_term)
