@@ -23,7 +23,6 @@ def page(browser):
 
 def test_invalid_login_without_password(page):
     xpath_cookie_refuse ='//*[@id="frm-consentPopUp-consentForm"]/p[3]/button[1]'
-    id_search_box ="#frm-searchBox-searchForm-query"
     id_email_input = "#frm-loginForm-login"
     id_password_input = "#frm-loginForm-password"
     id_submit_button = "#frm-loginForm > p:nth-child(7) > button"
